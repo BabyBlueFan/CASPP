@@ -1,0 +1,6 @@
+build/
+.DS*
+cmakeBuild/
+.cache/
+compile_commands.*
+claude*
