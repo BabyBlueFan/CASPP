@@ -34,6 +34,10 @@ int main(int argc, char* argv[])
                 char usrBuf[1024];
                 read(connfd, usrBuf , sizeof(usrBuf));
                 fprintf(stdout, "form client:\n %s \n", usrBuf);
+                if (strstr(usrBuf, "quit") != NULL) {
+                    printf("client quit!\n");
+                    break;
+                }
             }
             close(connfd);              //处理完毕, 关闭连接
             exit(0);
