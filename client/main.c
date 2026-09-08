@@ -12,6 +12,9 @@ int main(int argc, char* argv[])
     int fd = open_client("localhost", "8888");
     fprintf(stdout, "fd = %d\n", fd);
     while (1) {
+        char usrBuf[1024];
+        fgets(usrBuf, 1023, stdin);
+        write(fd, usrBuf, sizeof(usrBuf));
     }
     return 0;
 }
